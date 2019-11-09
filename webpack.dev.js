@@ -7,13 +7,25 @@ module.exports = {
     entry: './src/client/index.js',
     mode: 'development',
     devtool: 'source-map',
-    stats: 'verbose',
+    output: {
+        libraryTarget: 'var',
+        library: 'Client'
+    },
+    node: {
+        fs: 'empty'
+    },
     module: {
         rules: [
             {
-                test: '/\.js$/',
+                test: /\.js$/,
                 exclude: /node_modules/,
                 loader: "babel-loader"
+            },
+            {
+                // Sass addition
+                test: /\.scss$/,
+                // Chained loaders RUNS FROM RIGHT TO LEFT!!! - Webpack will utilize the loaders in the specified order
+                use: ['style-loader', 'css-loader', 'sass-loader']               
             }
         ]
     },
