@@ -1,7 +1,8 @@
 const path = require('path')
 const webpack = require('webpack')
-const HtmlWebPackPlugin = require("html-webpack-plugin")
+const HtmlWebPackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+require('dotenv').config({path: '.env', encoding: 'utf8'})
 
 module.exports = {
     entry: './src/client/index.js',
@@ -9,10 +10,14 @@ module.exports = {
     devtool: 'source-map',
     output: {
         libraryTarget: 'var',
-        library: 'Client'
+        library: 'Client',
+        publicPath: '/'
     },
     node: {
         fs: 'empty'
+    },
+    devServer: {
+        contentBase: './dist'
     },
     module: {
         rules: [
@@ -42,6 +47,12 @@ module.exports = {
             // Automatically remove all unused webpack assets on rebuild
             cleanStaleWebpackAssets: true,
             protectWebpackAssets: false
+        }),
+        new webpack.DefinePlugin({
+            AYLIEN_ID: JSON.stringify(process.env.AYLIEN_ID),
+            AYLIEN_KEY: JSON.stringify(process.env.AYLIEN_KEY),
+            DEV_MODE: true,
+            HOME_PORT: process.env.PORT
         })
     ]
 }
