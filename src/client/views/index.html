@@ -1,38 +1,38 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>Test</title>
-    </head>
+  <head>
+    <meta charset="utf-8">
+    <title>NLP engine interface - example project</title>
+  </head>
 
     <body>
 
-        <header>
-            <div class="">
-                Logo
-            </div>
-            <div class="">
-                navigation
-            </div>
-        </header>
+      <header>
+        <section class='header-container'>
+          <div class="logo"></div>
+          <div class="greeting">Welcome to the AYLIEN sentiment interface!</div>
+        </section>
+      </header>
 
-        <main>
-            <section>
-                <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" placeholder="Name">
-                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
-                </form>
-            <section>
+      <main>
 
-            <section>
-                <strong>Form Results:</strong>
-                <div id="results"></div>
-            </section>
-        </main>
+        <section>
+          <form class="" onsubmit="return Client.handleSubmit(event)">
+            <input id="name" type="text" name="input" value="" placeholder="Please enter text to analyze">
+            <input id="button" type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+          </form>
+        <section>
 
-        <footer>
-            <p>&copy;2019 - Tamas Dinh - <a href='mailto:tamas.dinh@gmail.com'>Email me</a></p>
-        </footer>
+        <section class='results-header'>
+          <strong>Sentiment analysis results:</strong>
+          <div id="results"></div>
+        </section>
+
+      </main>
+
+      <footer>
+        <p>&copy;2019 - Tamas Dinh - <a href='mailto:tamas.dinh@gmail.com'>Email me</a></p>
+      </footer>
 
     </body>
 </html>

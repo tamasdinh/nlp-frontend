@@ -1,7 +1,18 @@
+$themeColor-Light: #b2cee0;
+$themeColor-Dark: #053e64;
+
+$buttonBackground: rgb(23, 99, 241);
+$buttonFontColor: #ddd;
+$buttonPadding: 0.5em 1em 0.5em 1em;
+$buttonBorderRadius: 1em;
+
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 90vh;
+    font-family: sans-serif;
+    background-color: $themeColor-Dark;
+    margin: 0 0 10px 10px;
 }
 
 main {

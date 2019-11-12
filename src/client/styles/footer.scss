@@ -1,0 +1,12 @@
+@import 'base';
+
+footer {
+  font-family: sans-serif;
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  height: 2em;
+  color: $themeColor-Dark;
+  background-color: $themeColor-Light;
+}

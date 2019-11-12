@@ -1,5 +1,13 @@
 function handleSubmit(event) {
   event.preventDefault()
+  const listExists = (document.getElementById('results').children.length > 0)
+    ? true : false
+  if (listExists) {
+    const selectedNode = document.getElementById('results')
+    while (selectedNode.firstChild) {
+      selectedNode.removeChild(selectedNode.firstChild)
+    }
+  }
 
   // check what text was put into the form field
   let formText = document.getElementById('name').value
@@ -36,8 +44,8 @@ function handleSubmit(event) {
     // Create a documentFragment to which we can attach list items as children
     const scaffold = document.createDocumentFragment();
 
-    // For all items in the response json object, list items are generated and
-      // added to the DocumentFragment
+  // For all items in the response json object, list items are generated and
+  // added to the DocumentFragment
     Object.keys(feedback).forEach(key => {
       if (key !== 'text') {
         // Omitting "text" variable as it can be seen in the input form anyways
@@ -45,9 +53,9 @@ function handleSubmit(event) {
         if (typeof feedback[key] === 'number') {
           // If variable is a number, convert to % and show only 2 decimals
           let num = (feedback[key] * 100).toFixed(2)
-          newElement.innerText = key + ':\t\t' + num + '%';
+          newElement.innerHTML = key + ':\t' + num + '%';
         } else {
-          newElement.innerText = key + ':\t\t' + feedback[key];
+          newElement.innerHTML = key + ':\t' + feedback[key];
         }
         scaffold.appendChild(newElement);
       }
