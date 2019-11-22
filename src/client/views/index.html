@@ -9,7 +9,6 @@
 
       <header>
         <section class='header-container'>
-          <div class="logo"></div>
           <div class="greeting">Welcome to the AYLIEN sentiment interface!</div>
         </section>
       </header>
@@ -17,10 +16,8 @@
       <main>
 
         <section>
-          <form class="" onsubmit="return Client.handleSubmit(event)">
-            <input id="name" type="text" name="input" value="" placeholder="Please enter text to analyze">
-            <input id="button" type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
-          </form>
+            <input id="input-form" type="text" name="input" value="" placeholder="Please enter text to analyze">
+            <input id="button" type="submit" name="" value="submit">
         <section>
 
         <section class='results-header'>
@@ -35,4 +32,13 @@
       </footer>
 
     </body>
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js')
+        })
+      }
+    </script>
+
 </html>

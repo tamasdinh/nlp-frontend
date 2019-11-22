@@ -3,34 +3,40 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/server/index.js",
-    "build-prod": "webpack --config webpack.prod.js",
-    "build-dev": "webpack-dev-server  --config webpack.dev.js --open"
+    "start": "node src/server/server.js",
+    "dev": "webpack-dev-server --config webpack.dev.js --open",
+    "test": "NODE_ENV=test jest --no-cache --verbose",
+    "build": "webpack --config webpack.prod.js",
+    "prod": "npm run build && npm start"
   },
   "keywords": [],
-  "author": "",
+  "author": "Tamas Dinh - tamas.dinh@gmail.com",
   "license": "ISC",
   "description": "",
   "dependencies": {
     "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "node-fetch": "^2.6.0",
-    "webpack": "^4.35.3",
-    "webpack-cli": "^3.3.5"
+    "express": "^4.17.1"
   },
   "devDependencies": {
     "@babel/core": "^7.5.4",
     "@babel/preset-env": "^7.5.4",
+    "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
     "body-parser": "^1.19.0",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.2.0",
     "html-webpack-plugin": "^3.2.0",
+    "jest": "^24.9.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "node-fetch": "^2.6.0",
     "node-sass": "^4.13.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "sass": "^1.23.3",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.0",
-    "webpack-dev-middleware": "^3.7.2",
-    "webpack-dev-server": "^3.9.0"
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.5",
+    "webpack-dev-server": "^3.9.0",
+    "workbox-webpack-plugin": "^4.3.1"
   }
 }
