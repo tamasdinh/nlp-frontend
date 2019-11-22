@@ -1,4 +1,4 @@
-# Travel Planner webapp
+# NLP frontend webapp
 
 ## Table of Contents
 
